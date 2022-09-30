@@ -115,3 +115,28 @@ Após executar a função o valor de x é 20
 Agora estamos dizendo que a função `dobro` irá retornar o valor atualizado de n. Antes, ela apenas atualizava o valor de `n`, fazia o printf e jogava `n` no lixo. Após as modificações, a função faz a atualização no valor de `n`, executa o printf e devolve o valor atualizado para quem chamou a função. Então, pegamos esse valor atualizado que a função retorna e guardamos dentro da gaveta `x`.
 
 `x = dobro(x);`
+
+
+## Problemas com variáveis comuns
+
+Tudo o que foi dito antes funciona muito bem em cenários simples, em que trabalhamos com números e caracteres únicos. Que são contúedos que "cabem na gaveta" e que podem ser copiados para outras variáveis/funções de forma rápida e fácil, computacionalmente falando.
+
+Entretanto, para outros valores, como strings, a gaveta pode não ser grande o suficiente. Além disso, o processo de fazer uma cópia do valor para enviar para funções pode ser muito custoso para o computador.
+
+Mas como assim a gaveta pode não ser suficientemente grande? 
+
+Bom, a resposta está em dois carinhas: stack e heap, mas relaxa! Abre o coração que vai ser rápido.
+
+A memória do programa se divide em stack e heap. *Stack* significa "pilha" e *heap* "amontoado". Enquanto os dados salvos na *stack* ficam organizados linearmente (em pilha), os dados no *heap* não ficam distribuídos de forma organizada. 
+
+Mas qual a vantagem do *heap* então? Entre outras razões, podemos dizer que uma das principais vantagens do heap é que o espaço da memória disponível para nosso programa utilizar pode aumentar dinamicamente, enquanto a stack tem tamanho fixo.
+
+Para entender melhor a vantagem disso imagine um programa que lê arquivos, armazena seu conteúdo em memória e conta quantas linhas ele possui. Inicialmente seu programa não sabe qual será o tamanho do arquivo, então ele precisa de um espaço grande ou que possa aumentar de tamanho conforme necessário. Esse espaço é o *heap*! Sabendo que a *stack* é limitada, esse tipo de dado, sem tamanho definido ou muito grande deve ser armazenado no *heap*.
+
+Mas existem outros problemas, imagine uma situação em que precisamos de uma variável para armazenar um grande texto que será usado em nosso programa. Então, em determinado ponto, enviamos esse texto para uma função que irá contar quantas letras A existem no texto. O processo de clonar esse texto para enviar para a função (como explicado anteriormente) seria um desperdício enorme de memória e processamento.
+
+Já conhecemos o problema, mas como solucionar?
+
+## Intuição de ponteiros
+
+## Ponteiros em C
