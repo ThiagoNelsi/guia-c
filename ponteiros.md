@@ -9,30 +9,34 @@
 
 ## Variáveis comuns
 
-Vamos começar entendendo (ou recordando) como variáveis comuns se comportam na linguagem C, posteriormente vamos analisar algumas situações em que utilizar apenas variáveis comuns (que não são ponteiros) traz desvantagens em performance, legibilidade de código e/ou otimização de memória.
+Vamos começar entendendo (ou recordando) como variáveis comuns se comportam na linguagem C, posteriormente vamos analisar algumas situações em que utilizar apenas variáveis comuns (que não são ponteiros) pode trazer desvantagens em performance, legibilidade de código e/ou otimização de memória.
 
-Para começar, daqui pra frente vamos relacionar o conceito de variável com o de uma gaveta, ela é um espaço que vamos utilizar para armazenar algo, no caso da computação vamos armazenar dados (números, textos, booleans...).
+Daqui pra frente vamos relacionar o conceito de variável com o de uma gaveta, ela é um espaço que vamos utilizar para armazenar algo, no caso da computação vamos armazenar dados (números, textos, booleans...).
 
-Em um grande gaveteiro é interessante colocar alguma identificação nas gavetas para saber seu conteúdo. Na programação fazemos o mesmo. A memória do computador é um gigantesco gaveteiro e cada gaveta (variável) recebe um nome:
+Pense na memória do computador como um grande gaveteiro. Para saber o que cada gaveta guarda é interessante colocar alguma identificação nas gavetas para saber seu conteúdo. Na programação fazemos o mesmo, cada gaveta (variável) recebe um nome:
 
 ```c
 int minha_gavetinha;
 ```
 
-Com isso separamos uma das gavetas para armazenar um valor inteiro, agora basta inserir algo dentro dela:
+Com isso, separamos uma das gavetas para armazenar um valor inteiro, agora basta inserir algo dentro dela:
 
 ```c
 int minha_gavetinha;
 minha_gavetinha = 10;
 ```
 
-Agora, o conteúdo guardado dentro de `minha_gavetinha` é o valor 10.
+ou 
+
+```c
+int minha_gavetinha = 10;
+```
+
+Agora, o conteúdo armazenado dentro de `minha_gavetinha` é o valor 10.
 
 Guarde bem essa informação, pois será importante para entender ponteiros posteriormente: a variável `minha_gavetinha`, como uma gaveta real, armazena exatamente o conteúdo que guardamos nela (nesse caso o valor 10). Parece besta, mas é importante.
 
 ### Funções
-
-> Se tem dúvidas sobre funções dê uma olhada no material sobre funções, senão vai boiar aqui :)
 
 #### Parâmetros
 
@@ -42,7 +46,7 @@ Quando um parâmetro ***não é*** um ponteiro o valor que enviamos pra ele é n
 
 Ex.: Ao fazer matrícula na escola levamos à secretaria cópias de nossos documentos originais. Então, a escola pode fazer o que quiser com a cópia sem comprometer nosso original.
 
-Vamos visualizar esse comportamente em um código simples:
+Vamos analisar uma situação análoga em um código simples:
 
 ```c
 #include <stdio.h>
@@ -68,7 +72,7 @@ O dobro é 20
 Após executar a função o valor de x é 10
 ```
 
-Vamos entender o que aconteceu...
+Bora entender o que aconteceu...
 
 1. Na função `main` declaramos a variável `x` recebendo o valor 10.
 2. Fazemos um printf mostrando o valor de `x` => `O valor de x é 10` 
